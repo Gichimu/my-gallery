@@ -24,3 +24,15 @@ class Image(models.Model):
     def __str__(self):
         return self.image
 
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def search_images(cls, category):
+        category = Category.objects.filter(name=category)
+        images = cls.objects.filter(category_id=category.id)
+        return images
+
