@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+
+{%block content%}
+    {{block.super}}
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                </nav>
+            </div>
+            <div class="col-md-9 text-center">
+                <a href="#exampleModalCenter" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic"  data-target="" src="https://www.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" alt=""></a>
+                <a href="#exampleModalCenter" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic" src="https://cdn.pixabay.com/photo/2015/06/19/21/24/the-road-815297__340.jpg" alt=""></a>
+                <a href="#exampleModalCenter" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic" src="https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_960_720.jpg" alt=""></a>
+                <a href="#exampleModalCenter" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic" src="https://images.newscientist.com/wp-content/uploads/2019/06/13111643/gettyimages-485057010.jpg" alt=""></a>
+            </div>
+            <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img class="modal-image" src="https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_960_720.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <i class="fas fa-map-marker-alt"></i> Amazon forest
+                        </div>
+                        <div class="col">
+                            <i class="fas fa-stopwatch"></i> 29th may, 2019
+                        </div>
+                        <div class="col float-right">
+                           22 <i class="far fa-thumbs-up"></i> | 
+                            <i class="far fa-thumbs-down"></i> 9
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+    </div>
+{%endblock%}
