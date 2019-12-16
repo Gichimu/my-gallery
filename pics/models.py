@@ -30,8 +30,17 @@ class Image(models.Model):
     def delete_image(image_id):
         Image.objects.filter(id=image_id).delete()
 
-    def update_image():
-        Image.objects.filter(id=id).update(field = new_name) 
+    def update_image(id, name):
+        Image.objects.filter(id=id).update(name=name) 
+    
+    @classmethod
+    def get_image_by_id(cls, id):
+        try:
+            image = cls.objects.get(id=id)
+            print("Object found")
+            return image
+        except DoesNotExist:
+            print("object not found")
 
     @classmethod
     def search_images(cls, category):

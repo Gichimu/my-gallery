@@ -22,8 +22,12 @@ class ImageTestClass(TestCase):
         self.assertTrue(len(images) == 0)
 
     def test_update_image(self):
-        self.test_image.update_image(self.test_image.id, name='another test')
-        self.assertTrue(self.test_image.name == 'another test')
+        self.test_image.update_image(self.test_image.id, name='another')
+        self.assertTrue(self.test_image.name == 'another')
+
+    def test_get_image_by_id(self):
+        image = Image.get_image_by_id(self.test_image.id)
+        self.assertEqual(image.name, self.test_image.name)
 
     def tearDown(self):
         Image.objects.all().delete()
