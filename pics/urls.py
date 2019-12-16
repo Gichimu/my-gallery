@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns= [
     url('^$', views.welcome, name = 'welcome'),
-    url('^search', views.search, name = 'search')
+    url('^search', views.search, name = 'search'),
 ]
 
 if settings.DEBUG:

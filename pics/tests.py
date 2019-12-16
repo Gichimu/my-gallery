@@ -11,18 +11,22 @@ class ImageTestClass(TestCase):
         self.test_image = Image(image='test.jpg', name='test', description='An amazing image', location=self.test_location, category=self.test_category)
 
 
-    def tearDown(self):
-        Image.objects.all().delete()
-        Location.objects.all().delete()
-        Category.objects.all().delete()
-
     def test_save_image(self):
         self.test_image.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
 
     def test_delete_image(self):
-        self.test_image.delete_image()
+        Image.delete_image(self.test_image.id)
         images = Image.objects.all()
         self.assertTrue(len(images) == 0)
+
+    def test_update_image(self):
+        self.test_image.update_image(self.test_image.id, name='another test')
+        self.assertTrue(self.test_image.name == 'another test')
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
         

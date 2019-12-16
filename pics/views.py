@@ -20,3 +20,5 @@ def search(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search_results.html',{"message":message})
+
+
