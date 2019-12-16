@@ -47,7 +47,7 @@
                             <a href="#{{image.name}}" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic" src="{{image.image.url}}" alt=""></a>
                             
                             <!-- Modal -->
-                            <div class="modal fade" id="image.name" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="{{image.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -56,16 +56,16 @@
                                         </button>
                                         </div>
                                         <div class="modal-body">
-                                        <img class="modal-image" src="https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_960_720.jpg" alt="">
+                                        <img class="modal-image" src="{{image.image.url}}" alt="">
                                         </div>
                                         <div class="modal-footer">
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <i class="fas fa-map-marker-alt"></i> Amazon forest
+                                                        <i class="fas fa-map-marker-alt"></i> {{image.description}}
                                                     </div>
                                                     <div class="col">
-                                                        <i class="fas fa-stopwatch"></i> 29th may, 2019
+                                                        <i class="fas fa-stopwatch"></i> {{image.timestamp}}
                                                     </div>
                                                     <div class="col float-right">
                                                     22 <i class="far fa-thumbs-up"></i> | 
