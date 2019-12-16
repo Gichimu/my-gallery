@@ -14,7 +14,7 @@ class Category(models.Model):
         return self.name
 
 class Image(models.Model):
-    image = models.CharField(max_length=30)
+    image = models.ImageField(upload_to= 'images/')
     name = models.CharField(max_length=30)
     description = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
@@ -22,7 +22,7 @@ class Image(models.Model):
     category = models.ForeignKey(Category, default='')
 
     def __str__(self):
-        return self.image
+        return self.name
 
     def save_image(self):
         self.save()
@@ -32,7 +32,7 @@ class Image(models.Model):
 
     @classmethod
     def search_images(cls, category):
-        category = Category.objects.filter(name=category)
-        images = cls.objects.filter(category_id=category.id)
+        category = Category.objects.get(name=category)
+        images = cls.objects.filter(category=category.id)
         return images
 
